@@ -1,0 +1,31 @@
+{
+  "name": "finaly",
+  "version": "1.0.0",
+  "description": "finaly company website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adids1221/finaly.git"
+  },
+  "author": "Adi Mordo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adids1221/finaly/issues"
+  },
+  "homepage": "https://github.com/adids1221/finaly#readme",
+  "dependencies": {
+    "concurrently": "^6.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12"
+  }
+}
