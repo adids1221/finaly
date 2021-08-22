@@ -6,10 +6,12 @@ module.exports = {
   theme: {
     backgroundColor: theme => ({
       ...theme('colors'),
-      'primary': '#022140',
-      'secondary': '#265077',
-      'greenish': '2d5f5d',
-      'danger': '#e3342f',
+      'primary': '#1d3557',
+      'secondary': '#457b9d',
+      'third': '#a8dadc',
+      'fourth': '#edf2f4',
+      'danger': '#e63946',
+      'form': "#8ecae6"
     }),
     extend: {},
     colors: {
@@ -20,7 +22,12 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
-      blue: colors.blue
+      blue: colors.blue,
+      primary: '1d3557',
+      secondary: '457b9d',
+      third: 'a8dadc',
+      fourth: 'f1faee',
+      fifth: 'e63946'
     }
   },
   variants: {
