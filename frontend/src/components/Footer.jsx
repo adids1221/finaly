@@ -1,9 +1,13 @@
-import React from "react";
-import logo from "../images/logo.png";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import { NavLink } from "react-router-dom";
-import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <footer className='relative bg-gray-300 pt-8 pb-6'>
       <div
@@ -25,7 +29,7 @@ const Footer = () => {
           ></polygon>
         </svg>
       </div>
-      <div className='container mx-auto px-4'>
+      <div className='container mx-auto px-4' data-aos='fade'>
         <div className='flex flex-wrap'>
           <div className='w-full lg:w-6/12 px-4'>
             <h4 className='text-3xl font-semibold sm:pr-96' dir='rtl'>
@@ -65,7 +69,7 @@ const Footer = () => {
                   <li>
                     <a
                       className='text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm'
-                      href=''
+                      href='/'
                     >
                       מי אנחנו
                     </a>

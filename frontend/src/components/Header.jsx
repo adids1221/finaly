@@ -1,28 +1,39 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import SocialIcons from "./SocialIcons";
 import logo from "../images/logo.png";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 const navigation = [
   {
     name: "מי אנחנו",
     href: "#",
-    icon: <i class='far fa-user leading-lg pl-1'></i>,
-    to: "/aboutus",
+    icon: <i className='far fa-user leading-lg pl-1'></i>,
+    to: "aboutus",
   },
   {
     name: "הפתרונות שלנו",
     href: "#",
     icon: <i className='far fa-lightbulb leading-lg pl-1'></i>,
-    to: "/solutions",
+    to: "solutions",
   },
   {
     name: "צור קשר",
     href: "#",
     icon: <i className='far fa-envelope leading-lg pl-1'></i>,
-    to: "/contact",
+    to: "contact",
   },
 ];
 
@@ -31,8 +42,17 @@ function classNames(...classes) {
 }
 
 const Header = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
+
   return (
-    <Disclosure as='nav' className={"bg-white bg-opacity-75 top-0"} dir='rtl'>
+    <Disclosure
+      as='nav'
+      className={"bg-white bg-opacity-75 top-0"}
+      dir='rtl'
+      data-aos='fade'
+    >
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-2 sm:px-6'>
@@ -55,8 +75,11 @@ const Header = () => {
                 <div className='hidden sm:block sm:ml-6'>
                   <div className='container px-4 mx-auto flex flex-wrap items-center justify-between'>
                     {navigation.map((item) => (
-                      <NavLink
+                      <Link
+                        key={item.name}
                         to={item.to}
+                        smooth={true}
+                        duration={2000}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
@@ -67,7 +90,7 @@ const Header = () => {
                       >
                         {item.icon}
                         {item.name}
-                      </NavLink>
+                      </Link>
                     ))}
                   </div>
                 </div>

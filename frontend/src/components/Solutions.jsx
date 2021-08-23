@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import s1 from "../images/s1.jpg";
 import s2 from "../images/s2.jpg";
 import s3 from "../images/s3.jpg";
@@ -27,6 +29,10 @@ const solutions = [
 ];
 
 const Solutions = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000, offset: 110 });
+  }, []);
+
   return (
     <div className='relative py-20 bg-white'>
       <div
@@ -48,11 +54,19 @@ const Solutions = () => {
           ></polygon>
         </svg>
       </div>
-      <h1 className='text-3xl mb-2 font-semibold leading-normal text-center justify-centerpb-3 -mt-10 pb-10'>
+      <h1
+        id='solutions'
+        data-aos='ease-in'
+        className='text-3xl mb-2 font-semibold leading-normal text-center justify-centerpb-3 -mt-10 pb-10'
+      >
         הפתרונות שלנו
       </h1>
       {solutions.map((sol) => (
-        <div className='container mx-auto px-4 py-4'>
+        <div
+          data-aos='fade-up'
+          key={sol.name}
+          className='container mx-auto px-4 py-4'
+        >
           <div className='items-center flex flex-wrap'>
             <div className='w-full md:w-4/12 ml-auto mr-auto px-4'>
               <img

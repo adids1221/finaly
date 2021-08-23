@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import t1 from "../images/team-3-800x800.jpg";
 import t2 from "../images/team-2-800x800.jpg";
 const Aboutus = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000, offset: 200 });
+  }, []);
   return (
     <div>
       <section className='relative '>
@@ -26,7 +31,7 @@ const Aboutus = () => {
         </div>
       </section>
 
-      <div className='bg-gray-300'>
+      <div className='bg-gray-300' id='aboutus'>
         <section className='pt-20 pb-48' dir='rtl'>
           <div className='container mx-auto px-4' dir='rtl'>
             <div className='flex flex-wrap justify-center text-center mb-24'>
@@ -37,7 +42,7 @@ const Aboutus = () => {
                 </p>
               </div>
             </div>
-            <div className='flex flex-wrap justify-center'>
+            <div data-aos='fade-up' className='flex flex-wrap justify-center'>
               <div className='w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4'>
                 <div className='px-6'>
                   <img

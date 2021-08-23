@@ -1,9 +1,14 @@
-import React from "react";
-import Backgroundimg from "../images/1.png";
-import Vid from "../images/pexels-kampus-production-8348902.mp4";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Intro = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   return (
     <div
+      data-aos='fade-in'
       className='relative pt-16 pb-32 flex content-center items-center justify-center'
       style={{
         minHeight: "75vh",
@@ -24,7 +29,7 @@ const Intro = () => {
       <div className='container relative mx-auto'>
         <div className='items-center flex flex-wrap'>
           <div className='w-full lg:w-6/12 px-4 ml-auto mr-auto text-center'>
-            <div className='pr-12'>
+            <div className='pr-12' data-aos='fade-up'>
               <h1 className='text-white font-semibold text-5xl'>Finaly</h1>
               <p className='mt-4 text-lg text-gray-300'>Planing your wealth</p>
               <p className='mt-4 text-lg text-gray-300'>

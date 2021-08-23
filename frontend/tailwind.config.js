@@ -13,7 +13,17 @@ module.exports = {
       'danger': '#e63946',
       'form': "#8ecae6"
     }),
-    extend: {},
+    extend: {
+      animation: {
+        fadeIn: "fadeIn 2s ease-in forwards"
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 }
+        }
+      }
+    },
     colors: {
       transparent: 'transparent',
       black: colors.black,
@@ -31,6 +41,7 @@ module.exports = {
     }
   },
   variants: {
+    animation: ["motion-safe"],
     extend: {},
   },
   plugins: [],
